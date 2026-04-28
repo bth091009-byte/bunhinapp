@@ -3,4 +3,4 @@ services:
     name: bunhin-app
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn main:app"
+    startCommand: "gunicorn maincode:app"
