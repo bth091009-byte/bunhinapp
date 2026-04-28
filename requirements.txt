@@ -2,3 +2,4 @@ flask
 firebase-admin
 requests
 gunicorn
+google-generativeai
