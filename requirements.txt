@@ -1,6 +1,10 @@
 Flask==3.0.3
-firebase-admin
-requests
-google-generativeai
-gunicorn
-python-dotenv   # (tùy chọn, để test local)
+gunicorn==23.0.0
+requests==2.32.3
+
+# Google packages - pin phiên bản để tránh conflict
+firebase-admin==6.6.0
+google-generativeai==0.8.4
+
+# Tùy chọn (nếu bạn muốn test local)
+python-dotenv==1.0.1
