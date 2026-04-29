@@ -4,6 +4,8 @@ from firebase_admin import credentials, db
 import requests
 import google.generativeai as genai
 from datetime import datetime
+import os
+import json
 
 app = Flask(__name__)
 app.secret_key = "bunhin2025_strong_secret_key_123456789"
