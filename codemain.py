@@ -158,7 +158,14 @@ def analyze_disease():
   "ai_advice": "Lời khuyên chi tiết cho bà con bằng văn xuôi tự nhiên, không markdown"
 }
 
-Các bệnh lúa phổ biến cần nhận biết: Đạo ôn, Khô vằn, Lem lép hạt, Bạc lá, Vàng lá, Sâu cuốn lá, Rầy nâu, Cây khỏe mạnh.
+Chỉ được nhận biết và phân loại trong đúng 6 lớp bệnh sau đây trên cây lúa, KHÔNG được trả về tên bệnh nào khác ngoài danh sách này:
+1. Bệnh đốm lá
+2. Bệnh thối nụ
+3. Bệnh đốm xám lá
+4. Bệnh thối lá
+5. Bệnh thân chảy nhựa
+6. Cây khỏe mạnh
+
 Nếu cây khỏe, detections trả về [{"name": "Cây khỏe mạnh", "confidence": 0.95}].
 confidence là số từ 0.0 đến 1.0 thể hiện mức độ chắc chắn.
 Chỉ trả về JSON thuần túy, không có markdown, không có backtick."""
@@ -218,8 +225,15 @@ def analyze_coconut_disease():
   "ai_advice": "Lời khuyên chi tiết cho bà con bằng văn xuôi tự nhiên, không markdown"
 }
 
-Các bệnh dừa cần nhận biết: Bệnh đốm lá, Bệnh thối rễ, Bệnh vàng lá, Bọ cánh cứng (Bọ dừa), Bệnh thối đọt, Cây khỏe mạnh.
-Nếu cây khỏe, detections trả về [{"name": "Cây khỏe mạnh", "confidence": 0.95}].
+Chỉ được nhận biết và phân loại trong đúng 6 lớp bệnh sau đây trên cây dừa, KHÔNG được trả về tên bệnh nào khác ngoài danh sách này:
+1. Bệnh đạo ôn do nấm
+2. Bệnh đốm nâu
+3. Bệnh đạo ôn
+4. Bệnh cháy bìa lá
+5. Bệnh đốm nâu hẹp
+6. Lá khỏe mạnh
+
+Nếu cây khỏe, detections trả về [{"name": "Lá khỏe mạnh", "confidence": 0.95}].
 confidence là số từ 0.0 đến 1.0 thể hiện mức độ chắc chắn.
 Chỉ trả về JSON thuần túy, không có markdown, không có backtick."""
 
@@ -242,7 +256,7 @@ Chỉ trả về JSON thuần túy, không có markdown, không có backtick."""
         ai_advice = "Không thể phân tích ảnh lúc này. Vui lòng thử lại sau."
 
     return jsonify({
-        "disease_count": len([d for d in detections if d.get("name") != "Cây khỏe mạnh"]),
+        "disease_count": len([d for d in detections if d.get("name") != "Lá khỏe mạnh"]),
         "detections": detections,
         "ai_advice": ai_advice
     })
