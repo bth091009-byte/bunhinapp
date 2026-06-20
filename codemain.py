@@ -164,6 +164,8 @@ confidence là số từ 0.0 đến 1.0 thể hiện mức độ chắc chắn.
 Chỉ trả về JSON thuần túy, không có markdown, không có backtick."""
 
         vision = genai.GenerativeModel(
+            model_name="gemini-2.5-flash-lite",
+            system_instruction="Bạn là chuyên gia bệnh học cây lúa vùng ĐBSCL Việt Nam. Chỉ trả về JSON đúng định dạng yêu cầu, không thêm bất kỳ text nào khác."
         )
 
         image_part = {"inline_data": {"mime_type": media_type, "data": image_b64_clean}}
