@@ -701,14 +701,14 @@
 
             <!-- Upload & Preview -->
             <div>
-              <div class="upload-area" id="uploadArea" onclick="document.getElementById('imageInput').click()"
+              <div class="upload-area" id="uploadArea"
                 ondragover="event.preventDefault(); this.classList.add('dragover')"
                 ondragleave="this.classList.remove('dragover')"
                 ondrop="handleDrop(event)">
                 <div id="uploadPlaceholder">
                   <div class="text-6xl mb-3">📸</div>
                   <p class="text-green-700 font-semibold text-lg">Chụp hoặc chọn ảnh cây lúa</p>
-                  <p class="text-gray-400 text-sm mt-1">Kéo thả ảnh vào đây hoặc bấm để chọn</p>
+                  <p class="text-gray-400 text-sm mt-1">Kéo thả ảnh vào đây hoặc bấm nút bên dưới</p>
                   <p class="text-gray-300 text-xs mt-3">Hỗ trợ JPG, PNG, WEBP</p>
                 </div>
                 <div id="previewWrapper" style="display:none;" class="scan-overlay">
@@ -716,6 +716,17 @@
                   <div id="scanLine" class="scan-line" style="display:none;"></div>
                 </div>
               </div>
+              <div class="grid grid-cols-2 gap-3 mt-3">
+                <button type="button" onclick="document.getElementById('imageInputCamera').click()"
+                  class="flex items-center justify-center gap-2 bg-white border-2 border-green-500 text-green-700 py-3 rounded-2xl font-semibold text-sm hover:bg-green-50 transition-all">
+                  📷 Chụp ảnh
+                </button>
+                <button type="button" onclick="document.getElementById('imageInput').click()"
+                  class="flex items-center justify-center gap-2 bg-white border-2 border-green-500 text-green-700 py-3 rounded-2xl font-semibold text-sm hover:bg-green-50 transition-all">
+                  🖼️ Chọn ảnh có sẵn
+                </button>
+              </div>
+              <input type="file" id="imageInputCamera" accept="image/*" capture="environment" class="hidden" onchange="handleFileSelect(this)">
               <input type="file" id="imageInput" accept="image/*" class="hidden" onchange="handleFileSelect(this)">
 
               <button onclick="analyzeDisease()" id="analyzeBtn"
@@ -791,14 +802,14 @@
 
             <!-- Upload & Preview -->
             <div>
-              <div class="upload-area" id="uploadAreaCoconut" onclick="document.getElementById('imageInputCoconut').click()"
+              <div class="upload-area" id="uploadAreaCoconut"
                 ondragover="event.preventDefault(); this.classList.add('dragover')"
                 ondragleave="this.classList.remove('dragover')"
                 ondrop="handleDropCoconut(event)">
                 <div id="uploadPlaceholderCoconut">
                   <div class="text-6xl mb-3">🥥</div>
                   <p class="text-green-700 font-semibold text-lg">Chụp hoặc chọn ảnh cây dừa</p>
-                  <p class="text-gray-400 text-sm mt-1">Kéo thả ảnh vào đây hoặc bấm để chọn</p>
+                  <p class="text-gray-400 text-sm mt-1">Kéo thả ảnh vào đây hoặc bấm nút bên dưới</p>
                   <p class="text-gray-300 text-xs mt-3">Hỗ trợ JPG, PNG, WEBP</p>
                 </div>
                 <div id="previewWrapperCoconut" style="display:none;" class="scan-overlay">
@@ -806,6 +817,17 @@
                   <div id="scanLineCoconut" class="scan-line" style="display:none;"></div>
                 </div>
               </div>
+              <div class="grid grid-cols-2 gap-3 mt-3">
+                <button type="button" onclick="document.getElementById('imageInputCoconutCamera').click()"
+                  class="flex items-center justify-center gap-2 bg-white border-2 border-green-500 text-green-700 py-3 rounded-2xl font-semibold text-sm hover:bg-green-50 transition-all">
+                  📷 Chụp ảnh
+                </button>
+                <button type="button" onclick="document.getElementById('imageInputCoconut').click()"
+                  class="flex items-center justify-center gap-2 bg-white border-2 border-green-500 text-green-700 py-3 rounded-2xl font-semibold text-sm hover:bg-green-50 transition-all">
+                  🖼️ Chọn ảnh có sẵn
+                </button>
+              </div>
+              <input type="file" id="imageInputCoconutCamera" accept="image/*" capture="environment" class="hidden" onchange="handleFileSelectCoconut(this)">
               <input type="file" id="imageInputCoconut" accept="image/*" class="hidden" onchange="handleFileSelectCoconut(this)">
 
               <button onclick="analyzeCoconutDisease()" id="analyzeBtnCoconut"
