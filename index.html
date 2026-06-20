@@ -716,7 +716,7 @@
                   <div id="scanLine" class="scan-line" style="display:none;"></div>
                 </div>
               </div>
-              <input type="file" id="imageInput" accept="image/*" capture="environment" class="hidden" onchange="handleFileSelect(this)">
+              <input type="file" id="imageInput" accept="image/*" class="hidden" onchange="handleFileSelect(this)">
 
               <button onclick="analyzeDisease()" id="analyzeBtn"
                 class="w-full mt-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 disabled:opacity-50 disabled:cursor-not-allowed text-white py-4 rounded-2xl font-semibold text-base transition-all duration-200 shadow-lg flex items-center justify-center gap-3"
@@ -806,7 +806,7 @@
                   <div id="scanLineCoconut" class="scan-line" style="display:none;"></div>
                 </div>
               </div>
-              <input type="file" id="imageInputCoconut" accept="image/*" capture="environment" class="hidden" onchange="handleFileSelectCoconut(this)">
+              <input type="file" id="imageInputCoconut" accept="image/*" class="hidden" onchange="handleFileSelectCoconut(this)">
 
               <button onclick="analyzeCoconutDisease()" id="analyzeBtnCoconut"
                 style="width:100%;margin-top:1rem;background:linear-gradient(135deg,#f59e0b,#ea580c);color:white;padding:1rem;border-radius:1rem;font-weight:600;font-size:1rem;border:none;cursor:pointer;box-shadow:0 4px 14px rgba(234,88,12,0.35);display:flex;align-items:center;justify-content:center;gap:0.75rem;transition:all 0.2s;opacity:0.5;pointer-events:none;"
